@@ -11,6 +11,7 @@ html {
 body {
     margin: 0 !important;
     font-family: 'Poppins', sans-serif;
+    overflow: overlay;
 }
 
 body.fixed {
@@ -27,26 +28,20 @@ body.fixed {
     position: absolute;
     background-color: #2A2A30;
     top: 0;
-    left: 0;
+    right: 0;
+    opacity: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: -1;
     color: white;
-    padding: 10%;
+    padding: 50px 10% 50px 10%;
     box-sizing: border-box;
-    display: none;
+    transition: opacity 0.3s ease;
 }
 #mobile-nav-menu h1 {
     width: min-content;
     cursor: pointer;
-}
-#mobile-nav-menu .close-button {
-    position: absolute;
-    top: 10%;
-    right: 10%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+    display: none;
 }
 
 /* NAV */
@@ -80,8 +75,69 @@ nav .menu-button {
     cursor: pointer;
     position: absolute;
     right: 0;
-    z-index: 2;
+    z-index: 999;
 }
+nav .menu-button span{
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    background: white;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+nav .menu-button span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+nav .menu-button span:nth-child(2) {
+    top: 33%;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+nav .menu-button span:nth-child(3) {
+    top: 66%;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+}
+
+nav .menu-button.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: 2px;
+    left: 5px;
+}
+nav .menu-button.open span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+}
+nav .menu-button.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 75%;
+    left: 5px;
+}
+
 
 @media (max-width: 800px) {
     nav .sections {
@@ -92,6 +148,11 @@ nav .menu-button {
     }
 
     #mobile-nav-menu.show {
+        z-index: 998;
+        opacity: 1;
+    }
+
+    #mobile-nav-menu.show h1 {
         display: block;
     }
 }
@@ -269,6 +330,7 @@ nav .menu-button {
 }
 .about-section .content .picture {
     width: 30%;
+    max-width: 200px;
     aspect-ratio: 1 / 1;
     position: relative;
     height: min-content;
@@ -282,9 +344,14 @@ nav .menu-button {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: 15px;
-    left: 15px;
+    top: 10%;
+    left: 10%;
     border: solid 5px var(--orange);
+    transition: top 0.5s ease, left 0.5s ease;
+}
+.about-section .content .picture:hover div {
+    top: 13%;
+    left: 13%;
 }
 
 @media (max-width: 800px) {
@@ -296,6 +363,32 @@ nav .menu-button {
         width: 100%;
         text-align: center;
     }
+    .about-section .content .picture {
+        width: 60%;
+        margin-bottom: 50px;
+    }
+}
+
+.special-letters {
+    display: flex;
+    position: relative;
+    width: min-content;
+}
+
+.special-letters span {
+    position: relative;
+}
+.special-letters h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    transition: top 0.3s ease, left 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+.special-letters h1:hover {
+    color: var(--orange);
+    top: -5px;
+    transform: rotate(-10DEG);
 }
 
 /* PORTFOLIO SECTION */
@@ -376,7 +469,7 @@ nav .menu-button {
         flex-wrap: wrap;
         position: relative;
         z-index: 2;
-        margin: 25px 0 10px;
+        margin: 25px 0 0;
         padding: 0;
         list-style: none;
     }
@@ -407,7 +500,7 @@ nav .menu-button {
     }
 
     .project .project-title {
-        margin: 0 0 20px;
+        margin: -15px 0 20px;
     }
 
     .project .project-tags {
@@ -415,10 +508,6 @@ nav .menu-button {
     }
     .project .project-tags li {
         font-size: 18px;
-    }
-
-    .project .project-links a {
-        padding: 10px;
     }
 }
 
@@ -541,6 +630,7 @@ nav .menu-button {
     position: relative;
     margin-top: 10px;
     color: white;
+    padding-right: 10px;
 }
 
 .project .project-links a {

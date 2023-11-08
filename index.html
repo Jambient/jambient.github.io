@@ -16,10 +16,9 @@
 </head>
 <body>
     <div id="mobile-nav-menu">
-        <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); hideMobileNavMenu();">About<div class="hover-effect"></div></h1>
-        <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView(); hideMobileNavMenu();">Portfolio<div class="hover-effect"></div></h1>
-        <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView(); hideMobileNavMenu();">Contact<div class="hover-effect"></div></h1>
-        <img id="mobile-menu-close-button" class="close-button" src="close-icon.svg">
+        <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); toggleMobileNavMenu();">About<div class="hover-effect"></div></h1>
+        <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView(); toggleMobileNavMenu();">Portfolio<div class="hover-effect"></div></h1>
+        <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView(); toggleMobileNavMenu();">Contact<div class="hover-effect"></div></h1>
     </div>
     <section class="home-section">
         <img src="background.jpg">
@@ -30,11 +29,29 @@
                 <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView();">Portfolio<div class="hover-effect"></div></h1>
                 <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView();">Contact<div class="hover-effect"></div></h1>
             </div>
-            <img id="mobile-menu-button" class="menu-button" src="menu-icon.svg">
+            <div id="mobile-menu-button" class="menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- <img id="mobile-menu-button" class="menu-button" src="menu-icon.svg"> -->
         </nav>
         <div class="content">
-            <h1 style="margin-bottom: -50px;">James</h1>
-            <h1>Day<span class="dot"></span></h1>
+            <div class="special-letters" style="margin-bottom: -50px;">
+                <span><h1>J</h1></span>
+                <span><h1>a</h1></span>
+                <span><h1>m</h1></span>
+                <span><h1>e</h1></span>
+                <span><h1>s</h1></span>
+            </div>
+            <div class="special-letters">
+                <span><h1>D</h1></span>
+                <span><h1>a</h1></span>
+                <span><h1>y</h1></span>
+                <span class="dot" style="right: -35px"></span>
+            </div>
+            <!-- <h1 style="margin-bottom: -50px;">James</h1>
+            <h1>Day<span class="dot"></span></h1> -->
             <div class="seperator" style="width: 100px;"></div>
             <div class="links">
                 <a href="https://www.linkedin.com/in/james-day-dev" class="has-hover">LinkedIn<div class="hover-effect"></div></a>
@@ -73,7 +90,7 @@
                         <ul class="project-tags">
                             <li>Terminal</li>
                             <li>Rendering</li>
-                            <li>Game Loop</li>
+                            <li>Game</li>
                         </ul>
                         <div class="project-links">
                             <a href="https://github.com/Jambient/Sokoban" aria-label="Github Link" target="_blank">
