@@ -352,6 +352,7 @@ nav .menu-button {
     .project .project-content {
         position: relative;
         grid-area: 1 / 1 / -1 / 7;
+        z-index: 2;
     }
     
     .project .project-description {
