@@ -15,34 +15,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="mobile-nav-menu">
+        <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); hideMobileNavMenu();">About<div class="hover-effect"></div></h1>
+        <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView(); hideMobileNavMenu();">Portfolio<div class="hover-effect"></div></h1>
+        <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView(); hideMobileNavMenu();">Contact<div class="hover-effect"></div></h1>
+        <img id="mobile-menu-close-button" class="close-button" src="close-icon.svg">
+    </div>
     <section class="home-section">
         <img src="background.jpg">
         <nav>
             <h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1>
             <div class="sections">
-                <h1 class="has-hover">About<div class="hover-effect"></div></h1>
-                <h1 class="has-hover">Portfolio<div class="hover-effect"></div></h1>
-                <h1 class="has-hover">Contact<div class="hover-effect"></div></h1>
+                <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView();">About<div class="hover-effect"></div></h1>
+                <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView();">Portfolio<div class="hover-effect"></div></h1>
+                <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView();">Contact<div class="hover-effect"></div></h1>
             </div>
-            <img class="menu-button" src="menu-icon.svg">
+            <img id="mobile-menu-button" class="menu-button" src="menu-icon.svg">
         </nav>
         <div class="content">
-            <div class="left-side">
-                <h1 style="margin-bottom: -50px;">James</h1>
-                <h1>Day<span class="dot"></span></h1>
-                <div class="seperator" style="width: 100px;"></div>
-                <div class="links">
-                    <a href="https://www.linkedin.com/in/james-day-programming/" class="has-hover">LinkedIn<div class="hover-effect"></div></a>
-                    <div class="vertical-bar"></div>
-                    <a href="https://github.com/Jambient" class="has-hover">Github<div class="hover-effect"></div></a>
-                </div>
-                <span class="contact-button" >CONTACT ME</span>
+            <h1 style="margin-bottom: -50px;">James</h1>
+            <h1>Day<span class="dot"></span></h1>
+            <div class="seperator" style="width: 100px;"></div>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/james-day-programming/" class="has-hover">LinkedIn<div class="hover-effect"></div></a>
+                <div class="vertical-bar"></div>
+                <a href="https://github.com/Jambient" class="has-hover">Github<div class="hover-effect"></div></a>
             </div>
-            <!-- <div class="right-side">
-                <p class="section-title">ABOUT</p>
-                <h1>Game Designer and Programmer</h1>
-                <p class="description">Some cool text about how I have been developing games and whatever.</p>
-            </div> -->
+            <span class="contact-button" onClick="document.querySelector('.contact-section').scrollIntoView();">CONTACT ME</span>
         </div>
     </section>
     <section class="about-section">
@@ -59,21 +58,8 @@
         </div>
     </section>
     <section class="portfolio-section">
-        <div class="section-fade"></div>
         <p class="section-title">PORTFOLIO</p>
         <h1 class="title" style="margin-bottom: 50px;">Some of my work</h1>
-
-        <!-- <div class="project">
-            <img src="background.jpg">
-            <div>
-                <p class="tag">C++</p>
-                <h1 class="title">Project Name</h1>
-                <p class="description">Some small description about the game and anything I used and whatever. This description has to be a good length.</p>
-                <div class="links">
-
-                </div>
-            </div>
-        </div> -->
 
         <ul class="projects">
             <li class="project">
@@ -140,5 +126,22 @@
             </li>
         </ul>
     </section>
+    <section class="contact-section">
+        <p class="section-title">CONTACT</p>
+        <h1 class="title">Ways to contact me</h1>
+        <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupida non proident, sunt in culpa qui officia.</p>
+        <div class="links">
+            <div>
+                <img src="linkedin-icon.svg">
+                <a class="has-hover" href="https://www.linkedin.com/in/james-day-programming/">James Day<div class="hover-effect"></div></a>
+            </div>
+            <div>
+                <img src="email-icon.svg">
+                <a class="has-hover">day-a-james@proton.me<div class="hover-effect"></div></a>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
 </body>
 </html>
