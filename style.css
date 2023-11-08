@@ -172,6 +172,9 @@ nav .sections h1 {
     position: relative;
     padding: 50px 500px 50px 500px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .portfolio-section .section-fade {
     top: -50px;
@@ -198,39 +201,145 @@ nav .sections h1 {
     text-align: center;
 }
 
-.portfolio-section .project {
-    position: relative;
-}
-
-.portfolio-section .project > img {
-    width: 70%;
-    position: absolute;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.portfolio-section .project .tag {
-    text-align: right;
-    color: var(--orange);
+.projects {
+    list-style: none;
+    padding: 0;
     margin: 0;
-    font-weight: bold;
-    font-size: 25px;
+    max-width: 1000px;
+}
+.project {
+    position: relative;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+    -moz-box-align: center;
+    align-items: center;
+    margin-bottom: 100px;
 }
 
-.portfolio-section .project .title {
+.project:nth-of-type(2n+1) .project-content {
+    grid-column: 7 / -1;
     text-align: right;
 }
+.project .project-content {
+    position: relative;
+    grid-area: 1 / 1 / -1 / 7;
+}
 
-.portfolio-section .project .description {
-    text-align: right;
-    width: 50%;
-    margin-left: 50%;
-    position: absolute;
-    background-color: #2F2F36;
-    padding: 30px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    color: white;
+.project .project-overline {
+    margin: 10px 0;
+    color: var(--orange);
     font-size: 20px;
+    font-weight: 400;
+}
+
+@media (min-width: 768px) {
+    .project .project-title {
+        margin: 0 0 20px;
+    }
+}
+.project .project-title {
+    color: white;
+    font-size: clamp(24px, 5vw, 28px);
+}
+
+.project .project-description {
+    box-shadow: 0 10px 30px -15px #2F2F36;
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #2F2F36;
+    color: white;
+    font-size: 15px;
+}
+.project .project-description {
+    margin: 0;
+}
+
+.project:nth-of-type(2n+1) .project-tags {
+    -moz-box-pack: end;
+    justify-content: flex-end;
+}
+.project .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+    margin: 25px 0 10px;
+    padding: 0;
+    list-style: none;
+}
+
+.project:nth-of-type(2n+1) .project-tags li {
+    margin: 0 0 5px 20px;
+}
+.project .project-tags li {
+    margin: 0 20px 5px 0;
+    color: white;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.project:nth-of-type(2n+1) .project-links {
+    -moz-box-pack: end;
+    justify-content: flex-end;
+    margin-left: 0;
+    margin-right: -10px;
+}
+.project .project-links {
+    display: flex;
+    -moz-box-align: center;
+    align-items: center;
+    position: relative;
+    margin-top: 10px;
+    color: white;
+}
+
+.project .project-links a {
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    -moz-box-align: center;
+    align-items: center;
+    padding: 10px;
+}
+.project .project-links img {
+    width: 35px;
+    height: 35px;
+}
+
+.project:nth-of-type(2n+1) .project-image {
+    grid-column: 1 / 8;
+}
+.project .project-image {
+    box-shadow: 0 10px 30px -15px #2F2F36;
+    grid-area: 1 / 6 / -1 / -1;
+    position: relative;
+    z-index: 1;
+}
+
+.project .project-image .image-wrapper {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.project .project-image img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    max-width: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    box-sizing: inherit;
 }
