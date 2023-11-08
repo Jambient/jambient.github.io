@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --orange: #D5952B;
+}
+
+body {
+    margin: 0 !important;
+    font-family: 'Poppins', sans-serif;
+}
+
+.seperator {
+    height: 5px;
+    background-color: var(--orange);
+}
+
+/* NAV */
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+nav .logo {
+    font-size: 50px;
+    color: white;
+    position: relative;
+    margin: 0;
+}
+nav .sections {
+    display: flex;
+    gap: 60px;
+}
+nav .sections h1 {
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+/* TEXT HOVER EFFECT */
+.has-hover {
+    position: relative;
+}
+.has-hover .hover-effect {
+    width: 0px;
+    height: 4px;
+    background-color: var(--orange);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: width ease 0.3s;
+}
+.has-hover:hover .hover-effect {
+    left: 0;
+    width: 100%;
+}
+
+/* TEXT DOT */
+.dot {
+    height: 20%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: var(--orange);
+    position: absolute;
+    bottom: 20%;
+    margin-left: 5px;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    width: 100%;
+    height: 100vh;
+    background-color: #2A2A30;
+    padding: 50px 150px 50px 150px;
+    box-sizing: border-box;
+}
+.about-section img {
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    opacity: 20%;
+    position: absolute;
+}
+
+.about-section .content {
+    display: flex;
+    justify-content: space-between;
+    height: 70vh;
+}
+.about-section .content .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-section .content .left-side h1 {
+    color: white;
+    position: relative;
+    font-size: 120px;
+    margin: 0;
+}
+
+.about-section .content .links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+.about-section .content .links a {
+    color: white;
+    font-size: 20px;
+    z-index: 2;
+    text-decoration: none;
+}
+.about-section .content .links .vertical-bar {
+    width: 3px;
+    height: 40%;
+    background-color: white;
+}
+
+.about-section .content .contact-button {
+    padding: 20px;
+    border: solid 5px var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--orange);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    width: min-content;
+    white-space: nowrap;
+    transition: background-color ease 0.3s;
+    z-index: 2;
+}
+.about-section .content .contact-button:hover {
+    background-color: var(--orange);
+    color: white;
+}
+
+.about-section .content .right-side {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.about-section .content .right-side .section-title {
+    color: var(--orange);
+    font-size: 30px;
+    margin: 0;
+}
+.about-section .content .right-side h1 {
+    margin: 0;
+    margin-bottom: 30px;
+    color: white;
+    font-size: 60px;
+    line-height: 65px;
+}
+.about-section .content .right-side .description {
+    margin: 0;
+    color: white;
+    font-size: 20px;
+    opacity: 60%;
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-section {
+    background-color: #2B292C;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    padding: 50px 500px 50px 500px;
+    box-sizing: border-box;
+}
+.portfolio-section .section-fade {
+    top: -50px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(180deg, transparent, #2B292C);
+}
+
+.portfolio-section .section-title {
+    color: var(--orange);
+    font-size: 30px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.portfolio-section .title {
+    color: white;
+    font-size: 50px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.portfolio-section .project {
+    position: relative;
+}
+
+.portfolio-section .project > img {
+    width: 70%;
+    position: absolute;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.portfolio-section .project .tag {
+    text-align: right;
+    color: var(--orange);
+    margin: 0;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.portfolio-section .project .title {
+    text-align: right;
+}
+
+.portfolio-section .project .description {
+    text-align: right;
+    width: 50%;
+    margin-left: 50%;
+    position: absolute;
+    background-color: #2F2F36;
+    padding: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+}
