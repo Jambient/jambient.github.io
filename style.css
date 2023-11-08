@@ -35,6 +35,12 @@ nav .sections h1 {
     position: relative;
 }
 
+@media (max-width: 800px) {
+    nav .sections {
+        display: none;
+    }
+}
+
 /* TEXT HOVER EFFECT */
 .has-hover {
     position: relative;
@@ -64,62 +70,66 @@ nav .sections h1 {
     margin-left: 5px;
 }
 
-/* ABOUT SECTION */
-.about-section {
+/* HOME SECTION */
+.home-section {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #2A2A30;
-    padding: 50px 150px 50px 150px;
+    padding: 50px 10% 50px 10%;
     box-sizing: border-box;
+    position: relative;
 }
-.about-section img {
+.home-section img {
     top: 0px;
     left: 0px;
+    height: 100%;
     width: 100%;
-    height: 100vh;
     object-fit: cover;
     opacity: 20%;
     position: absolute;
 }
 
-.about-section .content {
+.home-section .content {
     display: flex;
     justify-content: space-between;
-    height: 70vh;
+    height: 70%;
+    margin-top: 10vh;
+    margin-bottom: 20vh;
 }
-.about-section .content .left-side {
+
+.home-section .content .left-side {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.about-section .content .left-side h1 {
+.home-section .content .left-side h1 {
     color: white;
     position: relative;
     font-size: 120px;
     margin: 0;
 }
 
-.about-section .content .links {
+.home-section .content .links {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 50px;
 }
-.about-section .content .links a {
+.home-section .content .links a {
     color: white;
     font-size: 20px;
     z-index: 2;
     text-decoration: none;
 }
-.about-section .content .links .vertical-bar {
+.home-section .content .links .vertical-bar {
     width: 3px;
     height: 40%;
     background-color: white;
 }
 
-.about-section .content .contact-button {
+.home-section .content .contact-button {
     padding: 20px;
     border: solid 5px var(--orange);
     display: flex;
@@ -134,49 +144,49 @@ nav .sections h1 {
     transition: background-color ease 0.3s;
     z-index: 2;
 }
-.about-section .content .contact-button:hover {
+.home-section .content .contact-button:hover {
     background-color: var(--orange);
     color: white;
 }
 
-.about-section .content .right-side {
+.home-section .content .right-side {
     max-width: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-.about-section .content .right-side .section-title {
+.home-section .content .right-side .section-title {
     color: var(--orange);
     font-size: 30px;
     margin: 0;
 }
-.about-section .content .right-side h1 {
+.home-section .content .right-side h1 {
     margin: 0;
     margin-bottom: 30px;
     color: white;
     font-size: 60px;
     line-height: 65px;
 }
-.about-section .content .right-side .description {
+.home-section .content .right-side .description {
     margin: 0;
     color: white;
     font-size: 20px;
     opacity: 60%;
 }
 
-/* PORTFOLIO SECTION */
-.portfolio-section {
+/* ABOUT SECTION */
+.about-section {
     background-color: #2B292C;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
-    padding: 50px 500px 50px 500px;
+    padding: 50px 20% 50px 20%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.portfolio-section .section-fade {
+.about-section .section-fade {
     top: -50px;
     left: 0px;
     position: absolute;
@@ -185,7 +195,50 @@ nav .sections h1 {
     background: linear-gradient(180deg, transparent, #2B292C);
 }
 
-.portfolio-section .section-title {
+.about-section .content {
+    max-width: 700px;
+    display: flex;
+    gap: 30px;
+}
+.about-section .content p {
+    width: 70%;
+    color: white;
+    font-size: 20px;
+}
+.about-section .content .picture {
+    width: 30%;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    height: min-content;
+}
+.about-section .content .picture img {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+}
+.about-section .content .picture div {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: solid 5px var(--orange);
+}
+
+/* PORTFOLIO SECTION */
+.portfolio-section {
+    background-color: #2d2b2e;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 50px 20% 50px 20%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
     color: var(--orange);
     font-size: 30px;
     margin: 0;
@@ -193,7 +246,7 @@ nav .sections h1 {
     text-align: center;
 }
 
-.portfolio-section .title {
+.title {
     color: white;
     font-size: 50px;
     margin: 0;
