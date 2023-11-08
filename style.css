@@ -18,6 +18,7 @@ body {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 nav .logo {
     font-size: 50px;
@@ -35,9 +36,18 @@ nav .sections h1 {
     position: relative;
 }
 
+nav .menu-button {
+    display: none;
+    width: 40px;
+    height: 40px;
+}
+
 @media (max-width: 800px) {
     nav .sections {
         display: none;
+    }
+    nav .menu-button {
+        display: block;
     }
 }
 
@@ -79,7 +89,7 @@ nav .sections h1 {
     box-sizing: border-box;
     position: relative;
 }
-.home-section img {
+.home-section > img {
     top: 0px;
     left: 0px;
     height: 100%;
@@ -223,6 +233,17 @@ nav .sections h1 {
     top: 15px;
     left: 15px;
     border: solid 5px var(--orange);
+}
+
+@media (max-width: 800px) {
+    .about-section .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-section .content p {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 /* PORTFOLIO SECTION */
