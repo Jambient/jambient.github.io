@@ -23,6 +23,17 @@ body.fixed {
     background-color: var(--orange);
 }
 
+/* FADE INTO VIEW CLASS */
+.fadeIn {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: opacity 0.7s, transform 0.7s;
+}
+.fadeIn.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
 /* MOBILE NAV MENU */
 #mobile-nav-menu {
     position: absolute;
@@ -327,6 +338,7 @@ nav .menu-button.open span:nth-child(3) {
     width: 70%;
     color: white;
     font-size: 20px;
+    opacity: 80%;
 }
 .about-section .content .picture {
     width: 30%;
@@ -435,7 +447,14 @@ nav .menu-button.open span:nth-child(3) {
         grid-template-columns: repeat(12, 1fr);
         -moz-box-align: center;
         align-items: center;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
+        background-color: transparent;
+        border-radius: 12px;
+        padding: 20px;
+        transition: background-color 0.3s, opacity 0.7s, transform 0.7s;
+    }
+    .project:hover {
+        background-color: #323033;
     }
     
     .project:nth-of-type(2n+1) .project-content {
@@ -449,12 +468,12 @@ nav .menu-button.open span:nth-child(3) {
     }
     
     .project .project-description {
-        box-shadow: 0 10px 30px -15px #2F2F36;
+        box-shadow: 0 10px 30px -15px #131313;
         position: relative;
         z-index: 2;
         padding: 15px;
         border-radius: 8px;
-        background-color: #2F2F36;
+        background-color: #3E3E47;
         color: white;
         font-size: 15px;
         margin: 0;
@@ -489,10 +508,14 @@ nav .menu-button.open span:nth-child(3) {
         grid-column: 1 / 8;
     }
     .project .project-image {
-        box-shadow: 0 10px 30px -15px #2F2F36;
+        box-shadow: 0 10px 30px -15px #131313;
         grid-area: 1 / 6 / -1 / -1;
         position: relative;
         z-index: 1;
+    }
+
+    .project:hover .project-image img {
+        filter: none;
     }
 
     .project .project-overline {
@@ -621,6 +644,8 @@ nav .menu-button.open span:nth-child(3) {
     width: 100%;
     object-fit: cover;
     box-sizing: inherit;
+    transition: filter 0.5s;
+    filter: blur(2px) grayscale(40%);
 }
 
 .project .project-links {
@@ -678,6 +703,7 @@ nav .menu-button.open span:nth-child(3) {
     color: white;
     text-align: center;
     margin-bottom: 50px;
+    opacity: 80%;
 }
 .contact-section .links {
     display: flex;
