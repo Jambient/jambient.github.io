@@ -12,21 +12,21 @@
     <meta name="theme-color" content="#ffffff">
 
     <title>James Day - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
     <div id="mobile-nav-menu">
-        <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); toggleMobileNavMenu();">About<div class="hover-effect"></div></h1>
         <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView(); toggleMobileNavMenu();">Portfolio<div class="hover-effect"></div></h1>
+        <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); toggleMobileNavMenu();">About<div class="hover-effect"></div></h1>
         <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView(); toggleMobileNavMenu();">Contact<div class="hover-effect"></div></h1>
     </div>
     <section class="home-section">
-        <img src="background.jpg">
+        <img src="background.png">
         <nav>
             <h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1>
             <div class="sections">
-                <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView();">About<div class="hover-effect"></div></h1>
                 <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView();">Portfolio<div class="hover-effect"></div></h1>
+                <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView();">About<div class="hover-effect"></div></h1>
                 <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView();">Contact<div class="hover-effect"></div></h1>
             </div>
             <div id="mobile-menu-button" class="menu-button">
@@ -34,7 +34,6 @@
                 <span></span>
                 <span></span>
             </div>
-            <!-- <img id="mobile-menu-button" class="menu-button" src="menu-icon.svg"> -->
         </nav>
         <div class="content">
             <div class="special-letters" style="margin-bottom: -50px;">
@@ -50,8 +49,6 @@
                 <span><h1>y</h1></span>
                 <span class="dot" style="right: -35px"></span>
             </div>
-            <!-- <h1 style="margin-bottom: -50px;">James</h1>
-            <h1>Day<span class="dot"></span></h1> -->
             <div class="seperator" style="width: 100px;"></div>
             <div class="links">
                 <a href="https://www.linkedin.com/in/james-day-dev" class="has-hover">LinkedIn<div class="hover-effect"></div></a>
@@ -61,24 +58,8 @@
             <span class="contact-button" onClick="document.querySelector('.contact-section').scrollIntoView();">CONTACT ME</span>
         </div>
     </section>
-    <section class="about-section">
-        <div class="section-fade"></div>
-        <p class="section-title">ABOUT</p>
-        <h1 class="title" style="margin-bottom: 50px;">Game Designer and Programmer</h1>
-
-        <div class="content fadeIn">
-            <p>
-            Hello! My name is James and I enjoy creating games. I am a passionate programmer with years of experience in many languages. I enjoy every part of games from the concepting to the designing to the programming.
-            <br><br>
-            I am always finding time to work on skills and improve my range of experience even further. The best thing is I enjoy expanding my skills, discovering new ways to do stuff or just new stuff all together.
-            </p>
-            <div class="picture">
-                <img src="ProfilePicture.png">
-                <div></div>
-            </div>
-        </div>
-    </section>
     <section class="portfolio-section">
+        <div class="section-fade"></div>
         <p class="section-title">PORTFOLIO</p>
         <h1 class="title" style="margin-bottom: 50px;">Some of my work</h1>
 
@@ -91,16 +72,17 @@
                         <div class="project-description">
                             <p>This project is for a university assessment where the goal was to make a text based game. I decided to remake the popular game Sokoban where the goal is to get the boxes onto the goals, but in the windows terminal instead.</p>
                         </div>
-                        <ul class="project-tags">
+                        <!-- <ul class="project-tags">
                             <li>Terminal</li>
                             <li>Rendering</li>
                             <li>Game</li>
-                        </ul>
-                        <div class="project-links">
+                        </ul> -->
+                        <!-- <div class="project-links">
                             <a href="https://github.com/Jambient/Sokoban" aria-label="Github Link" target="_blank">
                                 <img src="github-icon.svg">
                             </a>
-                        </div>
+                        </div> -->
+                        <a class="read-more has-hover" href="/example-project.html">Read More ➔<div class="hover-effect"></div></a>
                     </div>
                 </div>
                 <div class="project-image">
@@ -120,18 +102,9 @@
                         <p class="project-overline">Web</p>
                         <h3 class="project-title">Portfolio Website</h3>
                         <div class="project-description">
-                            <p>I have needed a portfolio for a while to be a place where I can showcase the projects I have made so I finally made one. This website was designed using gravit designer by me and also then implemented by me using vanilla html.</p>
+                            <p>I have needed a portfolio for a while to be a place where I can showcase the projects I have made so I finally made one. This website was designed and built by me.</p>
                         </div>
-                        <ul class="project-tags">
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Javascript</li>
-                        </ul>
-                        <div class="project-links">
-                            <a href="https://github.com/Jambient/jambient.github.io" aria-label="Github Link" target="_blank">
-                                <img src="github-icon.svg">
-                            </a>
-                        </div>
+                        <a class="read-more has-hover" href="/example-project.html">Read More ➔<div class="hover-effect"></div></a>
                     </div>
                 </div>
                 <div class="project-image">
@@ -146,6 +119,22 @@
                 </div>
             </li>
         </ul>
+    </section>
+    <section class="about-section">
+        <p class="section-title">ABOUT</p>
+        <h1 class="title" style="margin-bottom: 50px;">Game Designer and Programmer</h1>
+
+        <div class="content fadeIn">
+            <p>
+            Hello! My name is James and I enjoy creating games. I am a passionate programmer with years of experience in many languages. I enjoy every part of games from the concepting to the designing to the programming.
+            <br><br>
+            I am always finding time to work on skills and improve my range of experience even further. The best thing is I enjoy expanding my skills, discovering new ways to do stuff or just new stuff all together.
+            </p>
+            <div class="picture">
+                <img src="ProfilePicture.png">
+                <div></div>
+            </div>
+        </div>
     </section>
     <section class="contact-section">
         <p class="section-title">CONTACT</p>
@@ -163,6 +152,6 @@
         </div>
     </section>
 
-    <script src="main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
