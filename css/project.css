@@ -1,5 +1,9 @@
 @import url(root.css);
 
+body {
+    background: #2B292C;
+}
+
 p {
     color: white;
 }
@@ -10,6 +14,7 @@ section > p {
 section .section-title {
     color: var(--orange);
     margin: 0;
+    margin-bottom: 10px;
 }
 
 nav .current-path {
