@@ -18,7 +18,7 @@ function toggleMobileNavMenu() {
     isMobileNavMenuOpen = !isMobileNavMenuOpen
 }
 
-mobileMenuButton.onclick = toggleMobileNavMenu;
+// mobileMenuButton.onclick = toggleMobileNavMenu;
 
 // set up special letters
 specialLetterGroups = document.getElementsByClassName('special-letters')
@@ -40,3 +40,15 @@ function updateFadeElements() {
 }
 document.onscroll = updateFadeElements
 updateFadeElements();
+
+// move nav
+const navbar = document.querySelector('nav');
+const fixedClassThreshold = 100;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > fixedClassThreshold) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});

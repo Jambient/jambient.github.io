@@ -1,7 +1,10 @@
 @import url(root.css);
 
 body {
-    background: #2B292C;
+    background: var(--background-dark-shade);
+    overflow-x: hidden;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 p {
@@ -17,6 +20,9 @@ section .section-title {
     margin-bottom: 10px;
 }
 
+nav {
+    left: 0;
+}
 nav .current-path {
     color: white;
     font-size: 18px;
@@ -26,6 +32,174 @@ nav .current-path a:not(:last-child) {
 }
 nav .current-path span {
     opacity: 50%;
+}
+
+#title {
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min-content;
+}
+#title .project-name {
+    font-size: min(15vw, 10rem);
+    margin: 0;
+    margin-bottom: 50px;
+    line-height: 100%;
+    background: -webkit-linear-gradient(white, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+#title  .project-date {
+    font-size: 1.5rem;
+    margin: 0;
+    opacity: 70%;
+}
+#title .project-description {
+    font-size: 1.5rem;
+    opacity: 70%;
+}
+
+hr {
+    width: min(100%, 1000px);
+    opacity: 70%;
+}
+
+section {
+    color: white;
+    margin: auto;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    width: min(100%, 1000px);
+}
+
+section .contents-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+section .contents-title div {
+    width: 15px;
+    height: 15px;
+    background: var(--orange);
+    border-radius: 50%;
+    box-shadow: 0px 0px 20px var(--orange);
+}
+section .contents-title h4 {
+    margin: 0;
+    font-weight: normal;
+    opacity: 70%;
+    letter-spacing: 3px;
+}
+
+section > .title {
+    font-size: 2.2rem;
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.35);
+    margin-bottom: 60px;
+}
+
+.double-container {
+    grid-column-gap: 48px;
+    grid-row-gap: 16px;
+    grid-template-columns: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: space-between;
+    align-self: stretch;
+    align-items: baseline;
+    display: grid;
+}
+section > .paragraph .title {
+    margin: 0;
+}
+section > .paragraph p {
+    opacity: 70%;
+    margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .double-container {
+        grid-row-gap: 24px;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 991px) {
+    .double-container {
+        grid-column-gap: 32px;
+    }
+}
+
+#overview p {
+    margin: 0;
+    margin-bottom: 50px;
+    opacity: 70%;
+}
+
+.link {
+    height: 80px;
+    background: linear-gradient(var(--background-light-shade), var(--background-light-shade)) padding-box, linear-gradient(to right, var(--link-color), var(--background-light-shade) 20%) border-box;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center; 
+    padding: 5px 20px;
+    gap: 10px;
+    margin-bottom: 20px;
+    --dark-link-color: rgb(from var(--link-color) calc(r * 0.2) calc(g * 0.2) calc(b * 0.2));
+}
+.link > img {
+    height: 40%;
+    margin-left: auto;
+}
+
+.link .light {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, var(--link-color), transparent);
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    transition: width 0.3s ease;
+    opacity: 20%;
+}
+.link:hover .light {
+    width: 150%;
+}
+
+.link .icon {
+    height: 70%;
+    background: linear-gradient(var(--dark-link-color), var(--dark-link-color)) padding-box, linear-gradient(to right, var(--link-color, 0.5), var(--dark-link-color)) border-box;
+    z-index: 2;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+}
+.link .icon img {
+    width: 60%;
+}
+
+.link .text {
+    z-index: 2;
+    color: white;
+}
+.link .text .subtitle {
+    margin: 0;
+    opacity: 70%;
+    letter-spacing: 3px;
+    font-weight: normal;
+}
+.link .text .title {
+    margin: 0;
+    margin-top: -5px;
 }
 
 /* MOBILE NAV MENU */
@@ -76,8 +250,7 @@ nav .current-path span {
 .title-section {
     width: 100%;
     height: 50%;
-    background-color: #2A2A30;
-    padding: 50px 10% 50px 10%;
+    padding: 0 10% 0 10%;
     box-sizing: border-box;
     position: relative;
 }
@@ -100,7 +273,7 @@ nav .current-path span {
     animation-fill-mode: forwards;
 }
 
-.title-section .content {
+.title-section > .content {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -132,11 +305,10 @@ nav .current-path span {
 
 /* DETAILS SECTION */
 .details-section {
-    background-color: #2B292C;
     width: 100%;
     height: 100%;
     position: relative;
-    padding: 50px 10% 50px 10%;
+    padding: 0 10% 0 10%;
     box-sizing: border-box;
 }
 
@@ -348,6 +520,52 @@ nav .current-path span {
     letter-spacing: 4px;
 }
 
+.title-images {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+}
+
+.terminal-image-container {
+    background: #282828;
+    padding-top: 30px;
+    border-radius: 12px;
+    border: #686868 solid 2px;
+    position: absolute;
+}
+.terminal-image-container > .dots {
+    position: absolute;
+    top: 10px;
+    height: 10px;
+    left: 12px;
+    display: flex;
+    gap: 5px;
+}
+.terminal-image-container > .dots > div {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+}
+.terminal-image-container > .content {
+    background: #0f0f0f;
+    padding: 10px;
+    border-radius: 0 0 12px 12px;
+}
+.terminal-image-container > .content > img {
+    width: 100%;
+}
+
+.spotlight {
+    position: absolute;
+    top: 50vh;
+    left: 0;
+    transform: translate(-50%, -50%);
+    width: 100vh;
+    height: 100vh;
+    background: radial-gradient(closest-side, rgba(255, 255, 255, 0.3), transparent);
+    z-index: -1;
+}
+
 /* MOBILE CHANGES */
 @media (max-width: 800px) {
     /* TIMELINE */
@@ -374,4 +592,30 @@ nav .current-path span {
     .links .link-container {
         width: 100%;
     }
+}
+
+.contents
+{
+    position: fixed;
+    right: 10%;
+    top: 30%;
+    color: white;
+}
+
+.contents h3
+{
+    letter-spacing: 3px;
+}
+
+.contents a
+{
+    color: white;
+    opacity: 70%;
+    transition: opacity 0.5s ease;
+    display: block;
+    padding-bottom: 20px;
+}
+.contents p:hover
+{
+    opacity: 100%;
 }

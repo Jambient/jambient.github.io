@@ -2,6 +2,11 @@
 
 :root {
     --orange: #D5952B;
+
+    /* --background-light-shade: #2D2B2E; */
+    /* --background-dark-shade: #2B292C; */
+    --background-light-shade: #191919;
+    --background-dark-shade: #151515;
 }
 
 html {
@@ -64,8 +69,28 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    padding: 30px 10% 30px 10%;
+    box-sizing: border-box;
+    transition: background-color ease 0.5s, padding ease 0.5s;
 }
+nav.scrolled {
+    position: fixed;
+    background: black;
+    padding: 10px 10% 10px 10%;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
 nav .logo {
     font-size: 40px;
     color: white;
@@ -206,10 +231,10 @@ nav .menu-button.open span:nth-child(3) {
 
 /* SECTIONS */
 section .section-fade {
-    top: -50px;
+    top: -100px;
     left: 0px;
     position: absolute;
     width: 100%;
-    height: 50px;
-    background: linear-gradient(180deg, transparent, #2B292C);
+    height: 100px;
+    background: linear-gradient(180deg, transparent, var(--background-dark-shade));
 }

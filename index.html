@@ -20,23 +20,27 @@
         <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); toggleMobileNavMenu();">About<div class="hover-effect"></div></h1>
         <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView(); toggleMobileNavMenu();">Contact<div class="hover-effect"></div></h1>
     </div>
+    <nav>
+        <h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1>
+        <div class="sections">
+            <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView();">Portfolio<div class="hover-effect"></div></h1>
+            <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView();">About<div class="hover-effect"></div></h1>
+            <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView();">Contact<div class="hover-effect"></div></h1>
+            <a class="cv-button" href="TestCV.pdf" target="_blank">View CV</a>
+        </div>
+        <div id="mobile-menu-button" class="menu-button">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
     <section class="home-section">
-        <img src="background.png">
-        <nav>
-            <h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1>
-            <div class="sections">
-                <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView();">Portfolio<div class="hover-effect"></div></h1>
-                <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView();">About<div class="hover-effect"></div></h1>
-                <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView();">Contact<div class="hover-effect"></div></h1>
-            </div>
-            <div id="mobile-menu-button" class="menu-button">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+        <!-- <img src="another-background.jpg"> -->
+        <video id="background-video" autoplay loop muted playsinline>
+            <source src="resources/videos/landing.mp4" type="video/mp4">
+        </video>
         <div class="content">
-            <div class="special-letters" style="margin-bottom: -50px;">
+            <div class="special-letters" style="margin-bottom: -70px;">
                 <span><h1>J</h1></span>
                 <span><h1>a</h1></span>
                 <span><h1>m</h1></span>
@@ -55,7 +59,7 @@
                 <div class="vertical-bar"></div>
                 <a href="https://github.com/Jambient" class="has-hover">Github<div class="hover-effect"></div></a>
             </div>
-            <span class="contact-button" onClick="document.querySelector('.contact-section').scrollIntoView();">CONTACT ME</span>
+            <!-- <span class="contact-button" onClick="document.querySelector('.contact-section').scrollIntoView();">CONTACT ME</span> -->
         </div>
     </section>
     <section class="portfolio-section">
@@ -70,18 +74,8 @@
                         <p class="project-overline">C++</p>
                         <h3 class="project-title">Terminal Sokoban</h3>
                         <div class="project-description">
-                            <p>This project is for a university assessment where the goal was to make a text based game. I decided to remake the popular game Sokoban where the goal is to get the boxes onto the goals, but in the windows terminal instead.</p>
+                            <p>A recreation of the 1980s Japanese puzzle game "Sokoban" for the terminal using a rendering system that utilises ANSI escape codes. Made for a first year university module.</p>
                         </div>
-                        <!-- <ul class="project-tags">
-                            <li>Terminal</li>
-                            <li>Rendering</li>
-                            <li>Game</li>
-                        </ul> -->
-                        <!-- <div class="project-links">
-                            <a href="https://github.com/Jambient/Sokoban" aria-label="Github Link" target="_blank">
-                                <img src="github-icon.svg">
-                            </a>
-                        </div> -->
                         <a class="read-more has-hover" href="/sokoban.html">Read More ➔<div class="hover-effect"></div></a>
                     </div>
                 </div>
@@ -99,10 +93,10 @@
             <li class="project fadeIn">
                 <div class="project-content">
                     <div>
-                        <p class="project-overline">Web</p>
-                        <h3 class="project-title">Portfolio Website</h3>
+                        <p class="project-overline">Unity</p>
+                        <h3 class="project-title">Astro Forge</h3>
                         <div class="project-description">
-                            <p>I have needed a portfolio for a while to be a place where I can showcase the projects I have made so I finally made one. This website was designed and built by me.</p>
+                            <p>This is a spaceship building and round-based combat game made in the Unity game engine. It was created as part of a first year university module.</p>
                         </div>
                         <a class="read-more has-hover" href="/example-project.html">Read More ➔<div class="hover-effect"></div></a>
                     </div>
@@ -113,7 +107,29 @@
                             <div style="max-width: 700px; display: block;">
                                 <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
                             </div>
-                            <img src="portfolio-project.png">
+                            <img src="resources/images/AstroForge.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">C++</p>
+                        <h3 class="project-title">OpenGL Rendering Showcase</h3>
+                        <div class="project-description">
+                            <p>This is a showcase of various features built on top of OpenGL. This project was created for a first yearr university module.</p>
+                        </div>
+                        <a class="read-more has-hover" href="/example-project.html">Read More ➔<div class="hover-effect"></div></a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/OpenGL Project.png">
                         </div>
                     </a>
                 </div>
@@ -122,13 +138,13 @@
     </section>
     <section class="about-section">
         <p class="section-title">ABOUT</p>
-        <h1 class="title" style="margin-bottom: 50px;">Game Designer and Programmer</h1>
+        <h1 class="title" style="margin-bottom: 50px;">Games Programmer</h1>
 
         <div class="content fadeIn">
             <p>
-            Hello! My name is James and I enjoy creating games. I am a passionate programmer with years of experience in many languages. I enjoy every part of games from the concepting to the designing to the programming.
+            Hello! My name is James and I enjoy creating games. I am a passionate programmer with years of experience in many languages including C++, C#, Python, and others. I am also familiar with the Unity and Unreal engines, and have created projects in both.
             <br><br>
-            I am always finding time to work on skills and improve my range of experience even further. The best thing is I enjoy expanding my skills, discovering new ways to do stuff or just new stuff all together.
+            I am currently a 2nd year student at the University of Stafforshire studying Computer Games Programming.
             </p>
             <div class="picture">
                 <img src="ProfilePicture.png">
