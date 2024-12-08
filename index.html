@@ -16,9 +16,10 @@
 </head>
 <body>
     <div id="mobile-nav-menu">
-        <h1 class="has-hover" onClick="document.querySelector('.portfolio-section').scrollIntoView(); toggleMobileNavMenu();">Portfolio<div class="hover-effect"></div></h1>
-        <h1 class="has-hover" onClick="document.querySelector('.about-section').scrollIntoView(); toggleMobileNavMenu();">About<div class="hover-effect"></div></h1>
-        <h1 class="has-hover" onClick="document.querySelector('.contact-section').scrollIntoView(); toggleMobileNavMenu();">Contact<div class="hover-effect"></div></h1>
+        <h1 onClick="document.querySelector('.portfolio-section').scrollIntoView(); toggleMobileNavMenu();">Portfolio</h1>
+        <h1 onClick="document.querySelector('.about-section').scrollIntoView(); toggleMobileNavMenu();">About</h1>
+        <h1 onClick="document.querySelector('.contact-section').scrollIntoView(); toggleMobileNavMenu();">Contact</h1>
+        <a class="cv-button" href="/CV.pdf" target="_blank" style="width: min(120px, 100%);">View CV</a>
     </div>
     <nav>
         <h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1>
@@ -35,7 +36,7 @@
         </div>
     </nav>
     <section class="home-section">
-        <video id="background-video" autoplay loop muted playsinline>
+        <video id="background-video" autoplay loop muted playsinline disablePictureInPicture>
             <source src="resources/videos/landing.mp4" type="video/mp4">
         </video>
         <div class="content">
@@ -54,21 +55,95 @@
             </div>
             <div class="seperator" style="width: 100px;"></div>
             <div class="links">
-                <!-- <a href="https://www.linkedin.com/in/james-day-dev" class="has-hover">LinkedIn<div class="hover-effect"></div></a> -->
-                <img src="resources/images/LinkedInIcon.svg" style="z-index: 999;" />
-                <div class="vertical-bar"></div>
-                <a href="https://github.com/Jambient" class="has-hover">Github<div class="hover-effect"></div></a>
+                <a href="https://www.linkedin.com/in/james-day-dev" class="has-hover"><img src="resources/images/LinkedInIcon.svg" /><div class="hover-effect"></div></a>
+                <a href="https://github.com/Jambient" class="has-hover"><img src="resources/images/GithubIcon.svg" /><div class="hover-effect"></div></a>
             </div>
-            <!-- <span class="contact-button" onClick="document.querySelector('.contact-section').scrollIntoView();">CONTACT ME</span> -->
         </div>
     </section>
     <section class="portfolio-section">
         <div class="section-fade"></div>
         <p class="section-title">PORTFOLIO</p>
-        <h1 class="title" style="margin-bottom: 50px;">Highlighted Projects</h1>
+        <h1 class="title" style="margin-bottom: 50px;">My Projects</h1>
+        <div class="filter-container">
+            <div id="filter-dropdown">
+                <div class="dropdown-button" style="width: 190px;">
+                    <span>Filter</span>
+                    <img src="resources/images/dropdown-icon.png" />
+                </div>
+                <div class="dropdown-content" style="width: 190px;">
+                    <input type="checkbox" id="filter-highlighted" name="highlighted" checked>
+                    <label for="highlighted"> Highlighted</label><br>
+                    <input type="checkbox" id="filter-cplusplus" name="C++">
+                    <label for="C++"> C++</label><br>
+                    <input type="checkbox" id="filter-csharp" name="C#">
+                    <label for="C#"> C#</label><br>
+                    <input type="checkbox" id="filter-unity" name="Unity">
+                    <label for="Unity"> Unity</label><br>
+                    <input type="checkbox" id="filter-unreal" name="Unreal Engine">
+                    <label for="Unreal Engine"> Unreal Engine</label><br>
+                    <input type="checkbox" id="filter-monogame" name="MonoGame">
+                    <label for="MonoGame"> MonoGame</label><br>
+                    <input type="checkbox" id="filter-sdl" name="SDL">
+                    <label for="SDL"> SDL</label><br>
+                    <input type="checkbox" id="filter-directx" name="DirectX">
+                    <label for="DirectX"> DirectX</label><br>
+                    <input type="checkbox" id="filter-opengl" name="OpenGL">
+                    <label for="OpenGL"> OpenGL</label><br>
+                    <!-- <input type="checkbox" id="filter-first-year-uni" name="FirstYearUni">
+                    <label for="FirstYearUni"> Uni First Year</label><br>
+                    <input type="checkbox" id="filter-first-year-uni" name="FirstYearUni">
+                    <label for="FirstYearUni"> Uni Second Year</label><br> -->
+                </div>
+            </div>
+            <span id="filter-result-text">Showing 0 out of 7 projects</span>
+        </div>
 
-        <ul class="projects">
-            <li class="project fadeIn">
+        <ul id="projects">
+            <li class="project fadeIn filter-highlighted filter-csharp filter-monogame">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">C#, MonoGame</p>
+                        <h3 class="project-title">Tanks</h3>
+                        <div class="project-description">
+                            <p>This project was created for a second year university module.</p>
+                        </div>
+                        <a class="read-more has-hover" href="/unavailable.html">Read More ➔<div class="hover-effect"></div></a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/Tanks Project.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn filter-highlighted filter-csharp filter-unity">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">C#, Unity</p>
+                        <h3 class="project-title">Astro Forge</h3>
+                        <div class="project-description">
+                            <p>This is a spaceship building and round-based combat game made in the Unity game engine. It was created as part of a first year university module.</p>
+                        </div>
+                        <a class="read-more has-hover" href="/unavailable.html">Read More ➔<div class="hover-effect"></div></a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/AstroForge.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn filter-highlighted filter-cplusplus">
                 <div class="project-content">
                     <div>
                         <p class="project-overline">C++</p>
@@ -90,32 +165,10 @@
                     </a>
                 </div>
             </li>
-            <li class="project fadeIn">
+            <li class="project fadeIn filter-cplusplus filter-opengl">
                 <div class="project-content">
                     <div>
-                        <p class="project-overline">Unity</p>
-                        <h3 class="project-title">Astro Forge</h3>
-                        <div class="project-description">
-                            <p>This is a spaceship building and round-based combat game made in the Unity game engine. It was created as part of a first year university module.</p>
-                        </div>
-                        <a class="read-more has-hover" href="/unavailable.html">Read More ➔<div class="hover-effect"></div></a>
-                    </div>
-                </div>
-                <div class="project-image">
-                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
-                        <div class="image-wrapper">
-                            <div style="max-width: 700px; display: block;">
-                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
-                            </div>
-                            <img src="resources/images/AstroForge.png">
-                        </div>
-                    </a>
-                </div>
-            </li>
-            <li class="project fadeIn">
-                <div class="project-content">
-                    <div>
-                        <p class="project-overline">C++</p>
+                        <p class="project-overline">C++, OpenGL</p>
                         <h3 class="project-title">OpenGL Rendering Showcase</h3>
                         <div class="project-description">
                             <p>This is a showcase of various features built on top of OpenGL. This project was created for a first year university module.</p>
@@ -130,6 +183,72 @@
                                 <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
                             </div>
                             <img src="resources/images/OpenGL Project.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn filter-cplusplus filter-directx">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">C++, DirectX 11</p>
+                        <h3 class="project-title">DirectX 11 Rendering Showcase</h3>
+                        <div class="project-description">
+                            <p>This is a showcase of various features built on top of DirectX 11. This project was created for a second year university module.</p>
+                        </div>
+                        <a class="read-more has-hover" href="/unavailable.html">Read More ➔<div class="hover-effect"></div></a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/DirectX Project.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn filter-cplusplus filter-sdl">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">C++, SDL 2</p>
+                        <h3 class="project-title">Mountain Descent</h3>
+                        <div class="project-description">
+                            <p>This project was created for a first year university module.</p>
+                        </div>
+                        <a class="read-more has-hover" href="/unavailable.html">Read More ➔<div class="hover-effect"></div></a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/MountainDescent Project.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn filter-unreal">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">Unreal Engine 5</p>
+                        <h3 class="project-title">Tank Infiltration</h3>
+                        <div class="project-description">
+                            <p>This project was created for a first year university module.</p>
+                        </div>
+                        <a class="read-more has-hover" href="/unavailable.html">Read More ➔<div class="hover-effect"></div></a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/TankInfiltration Project.png">
                         </div>
                     </a>
                 </div>
