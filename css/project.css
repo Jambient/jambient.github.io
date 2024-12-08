@@ -594,6 +594,14 @@ section > .paragraph p {
     }
 }
 
+.text-figure
+{
+    padding: 2px 12px;
+    background-color: #3e3e3e;
+    border-radius: 999px;
+    font-size: 12px;
+}
+
 .contents
 {
     position: fixed;
@@ -618,6 +626,46 @@ section > .paragraph p {
 .contents p:hover
 {
     opacity: 100%;
+}
+
+.visuals-container
+{
+    width: 100%;
+    margin: 60px 0px;
+}
+
+.visuals-container > img
+{
+    width: 100%;
+    border-radius: 15px;
+    border: solid #474747 2px;
+}
+
+.visuals-container .visuals-info
+{
+    font-size: 12px;
+    float: right;
+    margin-top: 5px;
+}
+
+.visuals-container .figure-num
+{
+    opacity: 70%;
+}
+
+.visuals-container .visual-description
+{
+    opacity: 40%;
+}
+
+
+.visuals-container .type-tag
+{
+    padding: 2px 12px;
+    background-color: #3e3e3e;
+    border-radius: 999px;
+    margin-left: 10px;
+    opacity: 50%;
 }
 
 .unavailable {

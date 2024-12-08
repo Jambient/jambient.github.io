@@ -71,10 +71,37 @@
         <div class="contents-title"><div></div><h4>RENDERING</h4></div>
         <h1 class="title">Rendering colors to a terminal?</h1>
         <div class="paragraph double-container">
-            <h2 class="title">ANSI escape codes are the answer.</h1>
-            <p>Coming into this project, I knew that ANSI escape codes were likely what I needed as I had previously used them out in Python but I had never made anything with them. This project was a great place to see just how powerful they can be for terminal applications.</p>
+            <h2 class="title">ANSI escape sequences.</h1>
+            <p>Coming into this project, I knew that ANSI escape sequences were likely what I needed. These are sequences that when are interpreted by the terminal as commands rather than text and can be used to control the cursor location, font color, or font styling just to name a few. The sequence shown in <span class="text-figure">Figure 1.0</span> is the one I used to draw pixels onto the terminal.</p>
         </div>
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultrices sed ante et vulputate. Etiam non neque metus. Sed eros eros, suscipit vitae scelerisque a, sodales eu neque. Morbi tempor justo ac quam ultrices venenatis. Vestibulum scelerisque in justo eget dictum.</p> -->
+
+        <div class="visuals-container">
+            <image src="resources/images/projects/Sokoban/EscapeCodeDescription.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.0</span>
+                <span class="visual-description">ANSI Color Escape Code Format</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+
+        <div class="paragraph double-container">
+            <h2 class="title">But how do you actually show "pixels" on the terminal?</h1>
+            <p>The sequence shown in <span class="text-figure">Figure 1.0</span> allows me to set the background of any text character output to the terminal. This means that if I output a space (" ") then it only shows the background color. I found that the font used in the windows terminal means that spaces are two times as high as they are wide so if I output two spaces with the sequence I get a single coloured pixel.</p>
+        </div>
+
+        <div class="visuals-container">
+            <image src="resources/images/projects/Sokoban/NoOptimisation.gif" />
+            <div class="visuals-info">
+                <span class="figure-num">1.1</span>
+                <span class="visual-description">Drawing with no optimisation</span>
+                <span class="type-tag">GIF</span>
+            </div>
+        </div>
+
+        <div class="paragraph double-container">
+            <h2 class="title">Optimisation is needed.</h1>
+            <p>The first problem I ran into was that with the larger scenes I wanted to draw, I was getting very visible tearing as the terminal took a significant amount of time to redraw all the pixels. This is clearly shown in <span class="text-figure">Figure 1.1</span> with the character. There was one obvious solution for this, just don't redraw whats already there. If a pixel hasnt changed since last draw then just ignore it.</p>
+        </div>
     </section>
 
     <script src="js/main.js"></script>
