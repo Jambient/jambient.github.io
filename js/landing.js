@@ -104,30 +104,3 @@ filterDropdownContent.querySelectorAll('input[type=checkbox]').forEach((checkbox
 })
 
 filterGames()
-
-function updateFadeElements() 
-{
-    var pageBottom = window.outerHeight;
-    var elements = document.getElementsByClassName('fadeIn');
-
-    for (let element of elements) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < pageBottom) {
-            element.classList.add('visible')
-        }
-    }
-}
-document.onscroll = updateFadeElements
-updateFadeElements();
-
-// move nav
-const navbar = document.querySelector('nav');
-const fixedClassThreshold = 100;
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > fixedClassThreshold) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});

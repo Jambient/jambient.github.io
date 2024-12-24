@@ -1,0 +1,35 @@
+@import url(root.css);
+
+body {
+    background: var(--background-dark-shade);
+    overflow-x: hidden;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title-section
+{
+    max-width: 1000px;
+    margin: auto;
+}
+.title-section img
+{
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 50px;
+}
+
+.article-title
+{
+    margin-top: 15vh;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.article-date
+{
+    color: gray;
+    text-align: center;
+}
