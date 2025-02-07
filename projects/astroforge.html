@@ -21,8 +21,8 @@
     <!-- <div class="spotlight"></div> -->
     <img class="background-image" src="/resources/images/AstroForge.png" />
     <div id="title" class="fadeIn">
-        <h4 class="project-date">September 2024</h4>
-        <h1 class="project-name">Astro Forge<span class="dot" style="height: 3rem; bottom: 1.2rem;"></span></h1>
+        <h4 class="project-date">January 2024</h4>
+        <h1 class="project-name">Astro<br>Forge<span class="dot" style="height: 3rem; bottom: 1.2rem;"></span></h1>
     </div>
     <div class="contents">
         <h3>CONTENTS</h3>
@@ -34,7 +34,7 @@
         <div class="double-container">
             <div>
                 <h4>Links</h4>
-                <a href="https://github.com/Jambient/Sokoban" target="_blank">
+                <a href="https://github.com/Jambient/AstroForge" target="_blank">
                     <div class="link" style="--link-color: rgba(255, 255, 255, 0.8);">
                         <div class="light"></div>
                         <div class="icon">
@@ -50,7 +50,7 @@
             </div>
             <div>
                 <h4>Overview</h4>
-                <p><i>Tanks</i> is an online multiplayer top-down tank combat game.</p>
+                <p><i>Astroforge</i> is a game where you can build ships using the different pieces provided such as blocks, weapons, thrusters, etc. This ship can be used to fight enemies in a round based arena. This project was created as part of a first year university module.</p>
                 <h4>Timeline</h4>
                 <p>2 months</p>
             </div>
@@ -61,14 +61,102 @@
         <div class="contents-title"><div></div><h4>FEATURES</h4></div>
         <h1 class="title">Project Features</h1>
         <div class="paragraph double-container">
-            <h2 class="title">Multiple Game Modes</h1>
-            <p>Each room supports the 4 available game modes: Duels, 3 Player FFA, 4 Player FFA, and Teams. This can be seen in the online matchmaking menu shown in <span class="text-figure">Figure 1.0</span>.</p>
+            <h2 class="title">Main Menu</h1>
+            <p>The first thing the players see is the main menu <span class="text-figure">Figure 1.0</span>, where they can continue their previous game (is there is a save available) or start a new game. They can also test out ship designs in the sandbox builder, or modify the settings, or exit the game.</p>
         </div>
         <div class="visuals-container">
-            <image src="/resources/images/projects/Tanks/ModesShowcase.png" />
+            <image src="/resources/images/projects/Astroforge/MainMenuShowcase.png" />
             <div class="visuals-info">
                 <span class="figure-num">1.0</span>
-                <span class="visual-description">The available modes in <i>Tanks</i></span>
+                <span class="visual-description">The main menu</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Settings</h1>
+            <p>From the main menu, the player can access the settings, which currently just allows them to change the games keybinds <span class="text-figure">Figure 1.1</span> and audio volumes. <span class="text-figure">Figure 1.2</span></p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/SettingsShowcase1.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.1</span>
+                <span class="visual-description">The keybind settings</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/SettingsShowcase2.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.2</span>
+                <span class="visual-description">The audio settings</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Ship Building</h1>
+            <p>Before the player can start fighting enemies, they need to build a ship using the building system. The first step is to create a new ship or load a previous one in the menu in <span class="text-figure">Figure 1.3</span>. They can then start building with the intuitive UI shown in <span class="text-figure">Figure 1.4</span> and <span class="text-figure">Figure 1.5</span>, this image is taken in the sandbox building mode. In the main game mode, the player has a limited amount of GC (the in game currency) that they use to purchase parts.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/LoadShipShowcase.jpg" />
+            <div class="visuals-info">
+                <span class="figure-num">1.3</span>
+                <span class="visual-description">The ship loading menu</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/SandboxBuildShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.4</span>
+                <span class="visual-description">The ship building menu (sandbox)</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/BuildHoverMenuShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.5</span>
+                <span class="visual-description">The select hover menu</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Pause Menu</h1>
+            <p>At any point during the game (excluding the main menu and loading screens), the player can press ESC to bring up the pause menu shown in <span class="text-figure">Figure 1.6</span></p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/PauseMenuShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.6</span>
+                <span class="visual-description">The pause menu</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Round based combat</h1>
+            <p>When the player is ready to fight with their newly built ship, they can launch into the arena and fight various types of enemies in a procedurally generated waves of enemies <span class="text-figure">Figure 1.7</span>. During the round, the player can find orbs which grant them extra cash they can use to expand their ship <span class="text-figure">Figure 1.8</span>. Once all the enemies have been destroyed, the round ends and the player is given GC based on the number and type of enemies destroyed <span class="text-figure">Figure 1.7</span>. During the round, the player can find orbs which grant them extra cash they can use to expand their ship <span class="text-figure">Figure 1.9</span>.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/InRoundFightingEnemyShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.7</span>
+                <span class="visual-description">The player fighting an enemy</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/InRoundGCPickupShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.8</span>
+                <span class="visual-description">The player picking up a GC orb</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/Astroforge/RoundCompleteShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.9</span>
+                <span class="visual-description">The round complete screen</span>
                 <span class="type-tag">IMAGE</span>
             </div>
         </div>
