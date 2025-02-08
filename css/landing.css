@@ -522,6 +522,23 @@
     top: 70px;
 }
 
+#show-more-btn
+{
+    background: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+#show-more-btn:hover
+{
+    background-color: white;
+    color: var(--background-dark-shade);
+}
+
 /* CONTACT SECTION */
 
 .contact-section {

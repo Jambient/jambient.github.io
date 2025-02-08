@@ -626,11 +626,26 @@ section > .paragraph p {
 }
 @media (max-width: 620px) {
     /* LINKS */
+    .link {
+        padding: 0px 10px;
+    }
+    .link .subtitle {
+        font-size: 12px;
+    }
+    .link .title {
+        font-size: 22px;
+        margin-top: 0px;
+    }
+
     .links > a {
         width: 100%;
     }
     .links .link-container {
         width: 100%;
+    }
+
+    .under-construction .title {
+        white-space: wrap;
     }
 }
 

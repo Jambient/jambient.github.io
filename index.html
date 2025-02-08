@@ -64,40 +64,6 @@
         <div class="section-fade"></div>
         <p class="section-title">PORTFOLIO</p>
         <h1 class="title" style="margin-bottom: 50px;">My Projects</h1>
-        <div class="filter-container">
-            <div id="filter-dropdown">
-                <div class="dropdown-button" style="width: 190px;">
-                    <span>Filter</span>
-                    <img src="resources/images/dropdown-icon.png" />
-                </div>
-                <div class="dropdown-content" style="width: 190px;">
-                    <input type="checkbox" id="filter-highlighted" name="highlighted" checked>
-                    <label for="highlighted"> Highlighted</label><br>
-                    <input type="checkbox" id="filter-cplusplus" name="C++">
-                    <label for="C++"> C++</label><br>
-                    <input type="checkbox" id="filter-csharp" name="C#">
-                    <label for="C#"> C#</label><br>
-                    <input type="checkbox" id="filter-unity" name="Unity">
-                    <label for="Unity"> Unity</label><br>
-                    <input type="checkbox" id="filter-unreal" name="Unreal Engine">
-                    <label for="Unreal Engine"> Unreal Engine</label><br>
-                    <input type="checkbox" id="filter-monogame" name="MonoGame">
-                    <label for="MonoGame"> MonoGame</label><br>
-                    <input type="checkbox" id="filter-sdl" name="SDL">
-                    <label for="SDL"> SDL</label><br>
-                    <input type="checkbox" id="filter-directx" name="DirectX">
-                    <label for="DirectX"> DirectX</label><br>
-                    <input type="checkbox" id="filter-opengl" name="OpenGL">
-                    <label for="OpenGL"> OpenGL</label><br>
-                    <!-- <input type="checkbox" id="filter-first-year-uni" name="FirstYearUni">
-                    <label for="FirstYearUni"> Uni First Year</label><br>
-                    <input type="checkbox" id="filter-first-year-uni" name="FirstYearUni">
-                    <label for="FirstYearUni"> Uni Second Year</label><br> -->
-                </div>
-            </div>
-            <span id="filter-result-text">Showing 0 out of 7 projects</span>
-        </div>
-
         <ul id="projects">
             <li class="project fadeIn filter-highlighted filter-csharp filter-monogame">
                 <div class="project-content">
@@ -166,6 +132,27 @@
                 </div>
             </li>
             <li class="project fadeIn filter-highlighted filter-cplusplus">
+                <div class="project-content">
+                    <div>
+                        <p class="project-overline">C++</p>
+                        <h3 class="project-title">ECS Physics Engine</h3>
+                        <div class="project-description">
+                            <p>A custom made 3D rigidbody physics engine built on top of a custom made archetype ECS engine, rendered using my DirectX 11 framework. Currently in development as part of a second year university module.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <a style="width: 100%; height: 100%; border-radius: 8px; vertical-align: middle; display: inline-block;">
+                        <div class="image-wrapper">
+                            <div style="max-width: 700px; display: block;">
+                                <img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg height='438' width='700' xmlns='http://www.w3.org/2000/svg' version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static;">
+                            </div>
+                            <img src="resources/images/PhysicsEngineProject.png">
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="project fadeIn filter-cplusplus">
                 <div class="project-content">
                     <div>
                         <p class="project-overline">C++</p>
@@ -253,6 +240,10 @@
                     </a>
                 </div>
             </li>
+
+            <div style="display: flex; justify-content: center;">
+                <button id="show-more-btn">Show More</button>
+            </div>
         </ul>
     </section>
     <section class="about-section">
@@ -261,7 +252,7 @@
 
         <div class="content fadeIn">
             <p>
-            Hello! My name is James and I enjoy creating games. I am a passionate programmer with years of experience in many languages including C++, C#, Python, and others. I am also familiar with the Unity and Unreal engines, and have created projects in both.
+            Hello, I'm James - a dedicated and passionate games programmer with years of experience in C++, C#, Python, Lua. I am also highly proficient with both the Unity and Unreal game engines and have developed projects in both.
             <br><br>
             I am currently a 2nd year student at the University of Stafforshire studying Computer Games Programming.
             </p>

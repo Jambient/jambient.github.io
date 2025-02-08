@@ -1,11 +1,8 @@
 mobileMenuButton = document.getElementById('mobile-menu-button')
 mobileNavMenu = document.getElementById('mobile-nav-menu')
-
-filterDropdownContainer = document.getElementById('filter-dropdown')
-filterDropdownButton = filterDropdownContainer.querySelector('.dropdown-button')
-filterDropdownContent = filterDropdownContainer.querySelector('.dropdown-content')
-filterResultText = document.getElementById('filter-result-text')
 projectsContainer = document.getElementById('projects')
+showMoreBtn = document.getElementById('show-more-btn')
+showingMore = false
 
 body = document.querySelector('body')
 
@@ -36,71 +33,46 @@ function toggleMobileNavMenu()
 
 mobileMenuButton.onclick = toggleMobileNavMenu;
 
-function toggleDropdown()
+function toggleShowMore()
 {
-    if (!isFilterDropdownOpen)
-    {
-        filterDropdownContainer.classList.add('dropdown-open')
-    } else
-    {
-        filterDropdownContainer.classList.remove('dropdown-open')
-    }
-
-    isFilterDropdownOpen = !isFilterDropdownOpen;
-}
-filterDropdownButton.onclick = toggleDropdown;
-
-function filterGames()
-{
-    filterIds = []
-    filterDropdownContent.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
-        if (checkbox.checked)
-        {
-            filterIds.push(checkbox.id)
-        }
-    })
-
-    visibleProjectCount = 0
     projects = projectsContainer.querySelectorAll('li')
 
-    projects.forEach((element) => {
-        visible = true
-        for (const filterId of filterIds)
-        {
-            if (!element.classList.contains(filterId))
-            {
-                visible = false
-                break
-            }
-        }
-
-        if (visible)
-        {
-            visibleProjectCount += 1
-            element.classList.remove('display-hide')
-        }
-        else
-        {
-            element.classList.add('display-hide')
-        }
-    })
+    if (showingMore)
+    {
+        showMoreBtn.innerHTML = "Show More"
+    }
+    else
+    {
+        showMoreBtn.innerHTML = "Show Less"
+    }
 
     for (const project of projects)
     {
-        project.classList.add('opacity-hide')
-        project.classList.remove('visible')
-        setTimeout(() =>
+        if (!project.classList.contains("filter-highlighted"))
         {
-            project.classList.remove('opacity-hide')
-            project.classList.add('visible')
-        }, 50)
+            if (showingMore)
+            {
+                project.classList.add('display-hide')
+            }
+            else
+            {
+                project.classList.remove('display-hide')
+            }
+
+            project.classList.add('opacity-hide')
+            project.classList.remove('visible')
+            setTimeout(() =>
+            {
+                project.classList.remove('opacity-hide')
+                project.classList.add('visible')
+            }, 50)
+        }
     }
 
-    filterResultText.innerHTML = `Showing ${visibleProjectCount} out of ${projects.length} projects`
+    showingMore = !showingMore
 }
 
-filterDropdownContent.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
-    checkbox.onclick = filterGames;
-})
+showingMore = true
+toggleShowMore()
 
-filterGames()
+showMoreBtn.onclick = toggleShowMore
