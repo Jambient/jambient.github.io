@@ -120,6 +120,13 @@
     font-size: 20px;
     opacity: 60%;
 }
+.home-section .discipline-title {
+    position: relative;
+    font-size: 30px;
+    margin: 0;
+    margin-bottom: -20px;
+    color: var(--orange);
+}
 
 @media (max-width: 800px) {
     .home-section .content h1 {
