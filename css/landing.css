@@ -333,13 +333,6 @@
         z-index: 1;
     }
 
-    .project .project-image img {
-        filter: blur(2px) grayscale(40%);
-    }
-    .project:hover .project-image img {
-        filter: none;
-    }
-
     .project .project-overline {
         margin: 10px 0;
     }
