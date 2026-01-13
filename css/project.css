@@ -7,6 +7,21 @@ body {
     padding-right: 10%;
 }
 
+.zoom-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,1);
+  opacity: 0;
+  pointer-events: none;
+  /* transition: opacity .3s; */
+  z-index: 900;
+}
+
+.zoom-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 p {
     color: white;
 }
@@ -695,6 +710,15 @@ section > .paragraph p {
     width: 100%;
     border-radius: 15px;
     border: solid #474747 2px;
+    cursor: zoom-in;
+    transition: transform 0.4s cubic-bezier(.2,.8,.2,1);
+    will-change: transform;
+    touch-action: manipulation;
+}
+.visuals-container > img.zoomed {
+    cursor: zoom-out;
+    position: relative;
+    z-index: 999;
 }
 
 .visuals-container .visuals-info

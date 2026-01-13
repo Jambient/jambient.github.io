@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    
+        <title>James Day - Portfolio</title>
+        <link rel="stylesheet" href="/css/project.css">
+    </head>
+<body>
+    <nav>
+        <a href="/"><h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1></a>
+    </nav>
+    <!-- <div class="spotlight"></div> -->
+    <img class="background-image" src="/resources/images/PhysicsEngineProject.png" />
+    <div id="title" class="fadeIn">
+        <h4 class="project-date">December 2024</h4>
+        <h1 class="project-name">ECS Physics Engine<span class="dot" style="height: 3rem; bottom: 1.2rem;"></span></h1>
+    </div>
+    <div class="zoom-overlay"></div>
+    <section id="overview">
+        <div class="contents-title"><div></div><h4>OVERVIEW</h4></div>
+        <div class="double-container">
+            <div>
+                <h4>Links</h4>
+                <a href="https://github.com/Jambient/Physics-Framework" target="_blank">
+                    <div class="link" style="--link-color: rgba(255, 255, 255, 0.8);">
+                        <div class="light"></div>
+                        <div class="icon">
+                            <img src="/resources/images/projects/GithubIcon.png">
+                        </div>
+                        <div class="text">
+                            <h4 class="subtitle">GITHUB</h4>
+                            <h2 class="title">Project Source</h2>
+                        </div>
+                        <img src="/resources/images/projects/OpenNewIcon.svg">
+                    </div>
+                </a>
+            </div>
+            <div>
+                <h4>Overview</h4>
+                <p>A custom made 3D rigid body physics engine built on top of a custom made archetype ECS engine, rendered using my DirectX 11 framework.</p>
+                <h4>Timeline</h4>
+                <p>2 months</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="features">
+        <div class="contents-title"><div></div><h4>FEATURES</h4></div>
+        <h1 class="title">Project Features</h1>
+        <div class="paragraph double-container">
+            <h2 class="title">Many Collision Object Types</h1>
+            <p>Collision can be done with points, triangles, spheres, AABBs and OBBs.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/ECSPhysics/ManyObjectsShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.0</span>
+                <span class="visual-description">A big pile of objects.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Fairly Stable Collision & Stacking</h1>
+            <p>By utilising an iterative process in the collision resolution, the process becomes generally more stable.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/ECSPhysics/StackingShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.1</span>
+                <span class="visual-description">Some stacked boxes.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Debug Views</h1>
+            <p>You can view the calculated contact points for every collision, or the spatial partitioning AABBs for every object.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/ECSPhysics/ContactPointDebugShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.2</span>
+                <span class="visual-description">Contact points debug view.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/ECSPhysics/BoundingBoxDebugShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.3</span>
+                <span class="visual-description">Bounding box debug view.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Terrain Collision</h1>
+            <p>A static collision object can be generated from a height map that allows objects to roll around on terrain.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/ECSPhysics/TerrainCollisionShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.4</span>
+                <span class="visual-description">A pile of objects resting on a hill.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="contents-title"><div></div><h4>DIAGRAMS</h4></div>
+        <h1 class="title">UML Class Diagram</h1>
+        <div class="paragraph double-container">
+            <h2 class="title">Physics & ECS</h1>
+            <p>Below is the UML class diagram representing both the physics framework and the ecs engine.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/ECSPhysics/UML.png" />
+            <div class="visuals-info">
+                <span class="figure-num">2.0</span>
+                <span class="visual-description">Server class diagram</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/fadeIn.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/project.js"></script>
+    <script src="/js/image-zoom.js"></script>
+</body>
+</html>

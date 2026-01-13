@@ -1,45 +1,109 @@
-let imageDisplays = document.getElementsByClassName('image-display')
-let fullscreenModal = document.querySelector('.fullscreen-display')
-let fullscreenModalImage = fullscreenModal.querySelector('img')
-let fullscreenModalText = fullscreenModal.querySelector('p')
+let activeImage = null;
+let zoomState = null;
 
+const zoomOverlay = document.querySelector(".zoom-overlay");
+const nav = document.querySelector("nav");
+const navHeight = nav ? nav.offsetHeight : 0;
 
-function updateFullscreenImageSize() {
-    let imageToDisplay = fullscreenModalImage;
-    let maxHeight = window.innerHeight * 0.8; // Set maximum height as 80% of the viewport height
-    let maxWidth = window.innerWidth * 0.8; // Set maximum width as 80% of the viewport width
+/* ---------------------------
+   CALCULATE & APPLY TRANSFORM
+---------------------------- */
+function applyTransform(img) {
+  if (!zoomState) return;
 
-    let imageAspectRatio = imageToDisplay.naturalWidth / imageToDisplay.naturalHeight;
-    let screenAspectRatio = maxWidth / maxHeight;
+  const { rect } = zoomState;
 
-    if (imageAspectRatio > screenAspectRatio) {
-        fullscreenModalImage.style.width = `${maxWidth}px`;
-        fullscreenModalImage.style.height = `${maxWidth / imageAspectRatio}px`;
-    } else {
-        fullscreenModalImage.style.height = `${maxHeight}px`;
-        fullscreenModalImage.style.width = `${maxHeight * imageAspectRatio}px`;
-    }
+  // Image center (original, untransformed)
+  const imageCenterX = rect.left + rect.width / 2;
+  const imageCenterY = rect.top + rect.height / 2;
+
+  // Viewport center (content area)
+  const viewportCenterX = window.innerWidth / 2;
+  const viewportCenterY =
+    navHeight + (window.innerHeight - navHeight) / 2;
+
+  // Translation (recomputed every time)
+  const translateX = viewportCenterX - imageCenterX;
+  const translateY = viewportCenterY - imageCenterY;
+
+  // Scale (recomputed every time)
+  const scale = Math.min(
+    window.innerWidth / rect.width,
+    (window.innerHeight - navHeight) / rect.height
+  ) * 0.9;
+
+  img.style.transform =
+    `translate(${translateX}px, ${translateY}px) scale(${scale})`;
 }
 
-for (let display of imageDisplays) {
-    display.onclick = () => {
-        let imageToDisplay = display.querySelector('.image');
-        fullscreenModalImage.src = imageToDisplay.src;
-        fullscreenModalText.innerHTML = display.querySelector('p').innerHTML;
-        
-        updateFullscreenImageSize();
-        fullscreenModal.classList.remove('hide');
-    }
+/* ---------------------------
+   ZOOM IN
+---------------------------- */
+function zoomIn(img) {
+  // Capture original geometry ONCE
+  const rect = img.getBoundingClientRect();
+
+  zoomState = { rect };
+  activeImage = img;
+
+  applyTransform(img);
+
+  img.classList.add("zoomed");
+  document.body.style.overflow = "hidden";
+  zoomOverlay.classList.add("active");
 }
 
-window.onclick = function(event) {
-    if (event.target == fullscreenModal) {
-        fullscreenModal.classList.add('hide');
-        // Reset styles for the fullscreen image
-        fullscreenModalImage.style.width = '';
-        fullscreenModalImage.style.height = '';
-    }
+/* ---------------------------
+   ZOOM OUT
+---------------------------- */
+function zoomOut() {
+  if (!activeImage) return;
+
+  activeImage.style.transform = "";
+  activeImage.classList.remove("zoomed");
+
+  document.body.style.overflow = "";
+  zoomOverlay.classList.remove("active");
+
+  activeImage = null;
+  zoomState = null;
 }
 
-// Event listener for window resize
-window.addEventListener('resize', updateFullscreenImageSize);
+/* ---------------------------
+   CLICK + TAP
+---------------------------- */
+document.querySelectorAll(".visuals-container > img").forEach(img => {
+  const toggle = e => {
+    e.preventDefault();
+
+    if (activeImage && activeImage !== img) {
+      zoomOut();
+    }
+
+    activeImage ? zoomOut() : zoomIn(img);
+  };
+
+  img.addEventListener("click", toggle);
+  img.addEventListener("touchend", toggle, { passive: false });
+});
+
+/* ---------------------------
+   OVERLAY CLOSE
+---------------------------- */
+zoomOverlay.addEventListener("click", zoomOut);
+zoomOverlay.addEventListener("touchend", zoomOut, { passive: false });
+
+/* ---------------------------
+   ESC KEY
+---------------------------- */
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") zoomOut();
+});
+
+/* ---------------------------
+   RESIZE (RECOMPUTE FROM SOURCE)
+---------------------------- */
+window.addEventListener("resize", () => {
+  if (!activeImage || !zoomState) return;
+  applyTransform(activeImage);
+});

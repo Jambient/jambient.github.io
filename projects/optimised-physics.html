@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    
+        <title>James Day - Portfolio</title>
+        <link rel="stylesheet" href="/css/project.css">
+    </head>
+<body>
+    <nav>
+        <a href="/"><h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1></a>
+    </nav>
+    <!-- <div class="spotlight"></div> -->
+    <img class="background-image" src="/resources/images/OptimisedPhysics.png" />
+    <div id="title" class="fadeIn">
+        <h4 class="project-date">September 2025</h4>
+        <h1 class="project-name">Optimised Physics Simulation<span class="dot" style="height: 3rem; bottom: 1.2rem;"></span></h1>
+    </div>
+    <div class="zoom-overlay"></div>
+    <section id="overview">
+        <div class="contents-title"><div></div><h4>OVERVIEW</h4></div>
+        <div class="double-container">
+            <div>
+                <h4>Links</h4>
+                Project source is currently private.
+            </div>
+            <div>
+                <h4>Overview</h4>
+                <p>A 3D physics simulation built to simulate tens of thousands of spheres. Utilises threading, parallelisable code, and spatial partitioning to achieve this.</p>
+                <h4>Timeline</h4>
+                <p>2 months</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="features">
+        <div class="contents-title"><div></div><h4>FEATURES</h4></div>
+        <h1 class="title">Project Features</h1>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/WaveShowcase.gif" />
+            <div class="visuals-info">
+                <span class="figure-num">1.0</span>
+                <span class="visual-description">15000 objects being pushed to one side.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Threading</h1>
+            <p>Through the use of a thread pool, many parts of the physics calculations are done on separate threads.</p>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Spatial Partitioning</h1>
+            <p>I found for this project that the best option was a uniform grid, which splits the world into equal sized cells on all axes. However a more data oriented approach is taken to allow parallelising.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/GridCellColoursShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.1</span>
+                <span class="visual-description">A visualisation of the uniform grid.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Fairly Stable Physics</h1>
+            <p>Similar to my previous physics project, this one uses an iterative collision resolution process that decreases inter-penetration.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/StableStackingShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.2</span>
+                <span class="visual-description">ImGui Windows</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">ImGui Windows</h1>
+            <p>There are many windows that allow modification of settings and viewing debug information.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/ImGuiShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.3</span>
+                <span class="visual-description">ImGui Windows</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Custom Profiler</h1>
+            <p>For this project, I built a custom profiler that uses start and end macros to create new timing nodes in a tree. This data can then be exported from the program as a .csv file.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/ProfilerStatsShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.4</span>
+                <span class="visual-description">Profiling Stats Window.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/ExportedDataShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.5</span>
+                <span class="visual-description">An example document exported from the profiler.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+
+        <div class="paragraph double-container">
+            <h2 class="title">Allocation Tracking</h1>
+            <p>Only when it is compiled in, allocations will be tracked and a linked list of all of them will be made. This allows walking the heap to check for corrupted data. I also have a custom new macro that lets me take in extra data of where the allocation was called from.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/MemoryTrackerShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.6</span>
+                <span class="visual-description">Profiling Stats Window.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/OptimisedPhysics/CorruptingHeapShowcase.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.7</span>
+                <span class="visual-description">Example console output when walking the heap twice.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/fadeIn.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/project.js"></script>
+    <script src="/js/image-zoom.js"></script>
+</body>
+</html>
