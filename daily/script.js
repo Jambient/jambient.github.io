@@ -6,9 +6,12 @@ const games = [
     { name: "Kinda Hard Golf", url: "https://kindahardgolf.com/", img: "img/kinda_hard_golf.webp" },
     { name: "Songless", url: "https://lessgames.com/songless", img: "img/songless.png" },
     { name: "Bandle", url: "https://bandle.app/menu", img: "img/bandle.png" },
-    { name: "Spellcheck", url: "https://spellcheckgame.com/", img: "img/spellcheck.png" },
-    { name: "Tescodle", url: "https://tescodle.com/", img: "img/tescodle.webp" },
     { name: "Flagle", url: "https://flagle-game.com/daily", img: "img/flagle.jpg" },
+    { name: "Linkedin Tango", url: "https://www.linkedin.com/games/tango", img: "img/tango.webp" },
+    { name: "Linkedin Crossclimb", url: "https://www.linkedin.com/games/crossclimb", img: "img/crossclimb.webp" },
+    { name: "Nerdle", url: "https://nerdlegame.com/", img: "img/nerdle.png" },
+    { name: "Metazooa", url: "https://metazooa.com/", img: "img/metazooa.png" },
+    { name: "Globle", url: "https://globle-game.com/", img: "img/globle.png" }
 ];
 
 const whiteout = document.getElementById("whiteout");
