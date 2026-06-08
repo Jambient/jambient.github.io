@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    
+        <title>James Day - Portfolio</title>
+        <link rel="stylesheet" href="/css/project.css">
+    </head>
+<body>
+    <nav>
+        <a href="/"><h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1></a>
+    </nav>
+    <!-- <div class="spotlight"></div> -->
+    <img class="background-image" src="/resources/images/SDFEngineProject.png" />
+    <div id="title" class="fadeIn">
+        <h4 class="project-date">September 2025</h4>
+        <h1 class="project-name">SDF Engine<span class="dot" style="height: 3rem; bottom: 1.2rem;"></span></h1>
+    </div>
+    <div class="zoom-overlay"></div>
+    <section id="overview">
+        <div class="contents-title"><div></div><h4>OVERVIEW</h4></div>
+        <div class="double-container">
+            <div>
+                <h4>Links</h4>
+                Project source is currently private.
+            </div>
+            <div>
+                <h4>Overview</h4>
+                <p>A Signed Distance Field (SDF) Engine built as the dissertation part of my final year project 'A CPU-GPU Pipeline for Real-Time Signed Distance Field Rendering'.</p>
+                <h4>Timeline</h4>
+                <p>4 months</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section id="features">
+        <div class="contents-title"><div></div><h4>FEATURES</h4></div>
+        <h1 class="title">Project Features</h1>
+        <div class="paragraph double-container">
+            <h2 class="title">Boolean Operations</h1>
+            <p>SDFs allow for boolean operations to be done in real-time.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/SDFEngine/BooleanOperation.gif" />
+            <div class="visuals-info">
+                <span class="figure-num">1.0</span>
+                <span class="visual-description">Adjusting the step count on a UnionStairs node.</span>
+                <span class="type-tag">GIF</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Procedural Modelling</h1>
+            <p>Various operator nodes can quickly make models look more interesting and can be adjusted in real-time.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/SDFEngine/ProceduralModelling.gif" />
+            <div class="visuals-info">
+                <span class="figure-num">1.1</span>
+                <span class="visual-description">Adjusting the step count on a UnionStairs node.</span>
+                <span class="type-tag">GIF</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Scene Window</h1>
+            <p>The scene is defined on the CPU and is displayed using a tree like structure. Nodes can be re-parented by simply dragging the node onto another and can also deleted and renamed through a right-click context menu.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/SDFEngine/SceneWindow.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.2</span>
+                <span class="visual-description">An example scene hierarchy.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+        <div class="paragraph double-container">
+            <h2 class="title">Properties Window</h1>
+            <p>This window is for editing various properties of the currently selected node in the scene hierarchy. Every node has a local transform as well as parameters based on its information in the type registry. A material can also be applied after being created in the material editor.</p>
+        </div>
+        <div class="visuals-container">
+            <image src="/resources/images/projects/SDFEngine/PropertiesWindow.png" />
+            <div class="visuals-info">
+                <span class="figure-num">1.3</span>
+                <span class="visual-description">An example property window for a Mandelbulb node.</span>
+                <span class="type-tag">IMAGE</span>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="under-construction">
+        <div>
+            <h1 class="title">UNDER CONSTRUCTION</h1>
+            <p>This project write-up is still being worked on, sorry for the inconvinience.</p>
+        </div>
+        <img src="/resources/images/UnderConstructionIcon.png" />
+    </section>
+
+    <script src="/js/fadeIn.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/project.js"></script>
+    <script src="/js/image-zoom.js"></script>
+</body>
+</html>
