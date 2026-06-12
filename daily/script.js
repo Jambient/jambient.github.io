@@ -11,7 +11,10 @@ const games = [
     { name: "Linkedin Crossclimb", url: "https://www.linkedin.com/games/crossclimb", img: "img/crossclimb.webp" },
     { name: "Nerdle", url: "https://nerdlegame.com/", img: "img/nerdle.png" },
     { name: "Metazooa", url: "https://metazooa.com/", img: "img/metazooa.png" },
-    { name: "Globle", url: "https://globle-game.com/", img: "img/globle.png" }
+    { name: "Globle", url: "https://globle-game.com/", img: "img/globle.png" },
+    { name: "Peekpedia", url: "https://www.peekpedia.com/", img: "img/peekpedia.png" },
+    { name: "Timdle Classic", url: "https://www.timdle.com/daily", img: "img/timdle.png" },
+    { name: "Timdle Music", url: "https://www.timdle.com/music", img: "img/timdle.png" },
 ];
 
 const whiteout = document.getElementById("whiteout");

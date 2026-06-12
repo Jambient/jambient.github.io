@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    
+        <title>James Day - Portfolio</title>
+        <link rel="stylesheet" href="/css/project.css">
+    </head>
+<body>
+    <nav>
+        <a href="/"><h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1></a>
+    </nav>
+    <!-- <div class="spotlight"></div> -->
+    <img class="background-image" src="/resources/images/QuackEngine.png" />
+    <div id="title" class="fadeIn">
+        <h4 class="project-date">March 2026</h4>
+        <h1 class="project-name">Quack Engine<span class="dot" style="height: 3rem; bottom: 1.2rem;"></span></h1>
+    </div>
+    <div class="zoom-overlay"></div>
+    <section id="overview">
+        <div class="contents-title"><div></div><h4>OVERVIEW</h4></div>
+        <div class="double-container">
+            <div>
+                <h4>Links</h4>
+                Project source is currently private.
+            </div>
+            <div>
+                <h4>Overview</h4>
+                <p>A cross-platform game engine (currently Windows and PS5) developed by a group of 5 people.
+                    <br><br>I did the rendering by designing and implementing a Rendering Hardware Interface (RHI) to abstract away the different graphics APIs. I also made a high level renderer that uses this RHI to make general usage easier. I also integrated text rendering into this system using Multi-channel signed distance fields (MSDF). 
+                    <br><br>Additionally, I built a two stage asset management system with an offline asset build tool turning assets into PAK archive files which can be used in a runtime manager.</p>
+                <h4>Timeline</h4>
+                <p>2 months</p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="under-construction">
+        <div>
+            <h1 class="title">UNDER CONSTRUCTION</h1>
+            <p>This project write-up is still being worked on, sorry for the inconvinience.</p>
+        </div>
+        <img src="/resources/images/UnderConstructionIcon.png" />
+    </section>
+
+    <script src="/js/fadeIn.js"></script>
+    <script src="/js/nav.js"></script>
+    <script src="/js/project.js"></script>
+    <script src="/js/image-zoom.js"></script>
+</body>
+</html>
