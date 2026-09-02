@@ -159,6 +159,11 @@ section > .paragraph p {
     }
 }
 
+.single-container h2
+{
+    margin-bottom: 10px !important;
+}
+
 #overview p {
     margin: 0;
     margin-bottom: 50px;
@@ -784,4 +789,107 @@ section > .paragraph p {
 {
     color: black;
     padding-top: 60px;
+}
+
+.code-block {
+    background: #1e1e1e;
+    border: 2px solid #3a3a3a;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 60px 0;
+}
+
+.code-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    background: #2a2a2a;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.code-header .filename {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.code-header .dots {
+    display: flex;
+    gap: 6px;
+}
+
+.code-header .dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.code-header .dots span:nth-child(1) {
+    background: #ff5f57;
+}
+
+.code-header .dots span:nth-child(2) {
+    background: #febc2e;
+}
+
+.code-header .dots span:nth-child(3) {
+    background: #28c840;
+}
+
+.code-block pre {
+    margin: 0;
+    padding: 25px;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: #d4d4d4;
+    font-family: Consolas, monospace;
+    font-size: 15px;
+}
+
+.award-banner {
+    width: min(100%, 1000px);
+    margin: auto;
+    margin-top: -150px;
+    margin-bottom: 120px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(213,149,43,0.15),
+            rgba(213,149,43,0.05)
+        );
+
+    border: 2px solid rgba(213,149,43,0.4);
+    border-radius: 20px;
+
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 0 40px rgba(213,149,43,0.15);
+}
+
+.award-icon {
+    font-size: 4rem;
+}
+
+.award-content h4 {
+    color: var(--orange);
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.award-content h2 {
+    color: white;
+    margin: 10px 0;
+}
+
+.award-content p {
+    opacity: 70%;
 }

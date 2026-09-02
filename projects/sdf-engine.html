@@ -13,12 +13,12 @@
     
         <title>James Day - Portfolio</title>
         <link rel="stylesheet" href="/css/project.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.min.css">
     </head>
 <body>
     <nav>
         <a href="/"><h1 class="logo has-hover">JD<span class="dot"></span><div class="hover-effect"></div></h1></a>
     </nav>
-    <!-- <div class="spotlight"></div> -->
     <img class="background-image" src="/resources/images/SDFEngineProject.png" />
     <div id="title" class="fadeIn">
         <h4 class="project-date">September 2025</h4>
@@ -38,6 +38,24 @@
                 <h4>Timeline</h4>
                 <p>4 months</p>
             </div>
+        </div>
+    </section>
+    <hr>
+    <section class="award-banner fadeIn">
+        <div class="award-icon">
+            🏆
+        </div>
+
+        <div class="award-content">
+            <h4>AWARD WINNING PROJECT</h4>
+
+            <h2>
+                First Place - Games Programming
+            </h2>
+
+            <p>
+                Selected by industry judges as the best project in the Games Programming category at University of Staffordshire's GradEx 2026.
+            </p>
         </div>
     </section>
     <hr>
@@ -94,6 +112,60 @@
         </div>
     </section>
     <hr>
+    <section id="chalenges">
+        <div class="contents-title"><div></div><h4>ARCHITECTURE</h4></div>
+        <h1 class="title">Engine Architecture</h1>
+        <div class="paragraph single-container">
+            <h2 class="title">1. Type Registry</h1>
+            <p>The first core component of the engine is the runtime type registry, which defines all available SDF primitives and operations that can be used. Each type is registered with a set of metadata that describes how it should behave, how it is displayed in the editor, and how it is evaluated on the GPU. Adding new types has been made to be fairly straightforward, especially with parameters where different functions can be used that generate the correct metadata.
+            <br><br>
+            Below is an example of the registration function for the plane SDF. Unfortunately here I am just referring to the infinite flat surface in 3D space, not the more aerodynamic counterpart.
+            </p>
+        </div>
+        <div class="code-block">
+            <div class="code-header">
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <span class="filename">Engine/Core/Types/Primitives/Plane.h</span>
+            </div>
+            <pre><code class="language-cpp">static void RegisterPlane(SdfTypeRegistry& registry)
+{
+	registry.RegisterType({
+		.name = "Plane",
+		.category = SdfTypeCategory::Primitive,
+		.parameters = {
+			Param::Float3Norm("Normal", Vector3::Up),
+			Param::Float("Distance From Origin", 0.0f)
+		},
+		.gpuCode = SdfGpuCode::Plane,
+	});
+}</code></pre>
+        </div>
+        <div class="paragraph single-container">
+            <p>Having a type system like this is important for two main things.
+            <br><br>
+            First is so that the editor can be fully data-driven. The properties panel can dynamically generate the correct input UI based on the parameter types and can modify the data directly back into the scene representation. Metadata like the category also allows types to be grouped in the "Add Node" menu.
+            <br><br>
+            Second, it makes serialisation much easier as each type and its parameters can be described in a consistent format. This means that scenes can be saved and reconstructed reliably without any hardcoded per-type logic.
+            </p>
+        </div>
+        <br>
+        <div class="paragraph single-container">
+            <h2 class="title">2. Scene Representation</h1>
+            <p>In the engine, SDF scenes are defined on the CPU as a hierarchical node graph where each node represents either a primitive or an operator. This hierarchy allows the construction of more complex models through using combination operators on simple SDFs which still being easily modifiable.</p>
+        </div>
+        <br>
+        <div class="paragraph single-container">
+            <h2 class="title">3. Scene Compilation</h1>
+            <p>Before a scene can be rendered, the CPU-side representation is compiled into a linear representation that can be passed into the GPU shaders. This is required as the scene cannot be passed in while being hierarchical and it also contains data not required on the GPU such as node names.
+            </p>
+        </div>
+    </section>
+    <hr>
     <section class="under-construction">
         <div>
             <h1 class="title">UNDER CONSTRUCTION</h1>
@@ -106,5 +178,8 @@
     <script src="/js/nav.js"></script>
     <script src="/js/project.js"></script>
     <script src="/js/image-zoom.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-cpp.min.js"></script>
 </body>
 </html>
